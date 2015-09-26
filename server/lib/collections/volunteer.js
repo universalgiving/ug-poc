@@ -17,14 +17,28 @@ Volunteerings = new orion.collection('volunteerings', {
         // in the CMS panel
         columns: [
             {
+                data: "category",
+                title: "Category"
+            },
+            {
+                data: "thumbnail",
+                title: "Thumbnail"
+            },
+            {
                 data: "title",
                 title: "Title"
-            }, {
-                data: "author",
-                title: "Author"
+            },{
+                data: "org",
+                title: "Organization"
             }, {
                 data: "description",
                 title: "Description"
+            },{
+                data: "length",
+                title: "Length"
+            },{
+                data: "location",
+                title: "Location"
             }
         ]
     }
@@ -32,19 +46,35 @@ Volunteerings = new orion.collection('volunteerings', {
 
 
 Volunteerings.attachSchema(new SimpleSchema({
-    // We use `label` to put a custom label for this form field
-    // Otherwise it would default to `Title`
-    // 'optional: false' means that this field is required
-    // If it's blank, the form won't submit and you'll get a red error message
-    // 'type' is where you can set the expected data type for the 'title' key's value
+    category: {
+        type: String,
+        optional: false,
+        label: 'Category'
+    },
+    thumbnail: {
+        type: String,
+        optional: false,
+        label: 'Thumbnail'
+    },
     title: {
         type: String,
         optional: false,
         label: 'Volunteering Title'
     },
-    author: {
+    organization: {
         type: String,
         optional: false,
+        label: 'Organization'
+    },
+    length: {
+        type: String,
+        optional: false,
+        label: 'Length'
+    },
+    location: {
+        type: String,
+        optional: false,
+        label: 'Location'
     },
     // 'type: Date' means that this field is expecting a data as an entry
     submitted: {
