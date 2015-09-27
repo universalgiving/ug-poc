@@ -20,6 +20,7 @@ ddp-client@1.2.1
 ddp-common@1.2.1
 ddp-server@1.2.1
 deps@1.0.9
+devinit@0.0.1
 diff-sequence@1.0.1
 ecmascript@0.1.4
 ecmascript-collections@0.1.6
