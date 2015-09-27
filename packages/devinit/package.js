@@ -13,7 +13,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.1');
   api.use('ecmascript');
-  api.addFiles('devinit.js');
+  api.use('mongo', ['client', 'server']);
+  api.addFiles(['init.js','devinit.js']);
 });
 
 Package.onTest(function(api) {

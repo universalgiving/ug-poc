@@ -20,3 +20,11 @@ insecure                # Allow all DB writes from clients (for prototyping)
 angular
 
 devinit
+orionjs:core
+twbs:bootstrap
+fortawesome:fontawesome
+orionjs:bootstrap
+iron:router
+ejson
+orionjs:summernote
+orionjs:collections
