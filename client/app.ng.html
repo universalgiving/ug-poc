@@ -1,42 +1,40 @@
 <div ng-controller="appCtrl">
- 		<div class="container-fluid">
-			<div class="row" id="content">
-				<div class="row" id="header">
-		    <nav class="navbar navbar-inverse">
-			    <div class="navbar-header">
-				<a class="navbar-brand" href="#" id="brand"><b>UniversalGiving</b></a>
-			    </div>
-		    </nav>
+ 	<div class="container-fluid">
+		<div class="row" id="content">
+			<div class="row" id="header">
+    		    <nav class="navbar navbar-inverse">
+    			    <div class="navbar-header">
+    				    <a class="navbar-brand" href="#" id="brand"><b>UniversalGiving</b></a>
+    			    </div>
+                    <button href="cart.html" id="cartBtn" class="btn btn-default navbar-right">Cart</button>
+    		    </nav>
+		    </div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+
+        	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="appBody">
+            	<div ng-repeat="item in items"  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div  class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 item">
+                        <div class="row type" style="height: 10%;">
+                            <h4 >{{item.type}}</h4>
+                        </div>
+                        <div class="row thumbnail" style="height: 50%;">
+                            <img class="img-responsive" src="http://www.universalgiving.org/photo/image.do?id=3106">
+                        </div>
+                        <div class="row type" style="height: 30%;">
+            		     <h4 ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-model="item.title">{{item.title}}</h4>
+            		         <h4 ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-model="item.organization">
+            		         {{item.organization}}
+                            </h4>
+                        </div>
+
+                        <div class="row" id="comment">
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="timeScope">{{item.timeScope}}</div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="place">{{item.place}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
 		</div>
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-
-	<div  class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="appBody">
-    	<div ng-repeat="item in items"  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <div  class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 item">
-            <div class="row type" style="height: 10%;">
-                <h4 >{{item.type}}</h4>
-            </div>
-            <div class="row thumbnail" style="height: 50%;">
-                <img class="img-responsive" src="http://www.universalgiving.org/photo/image.do?id=3106">
-            </div>
-            <div class="row type" style="height: 30%;">
-		     <h4 ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-model="item.title">{{item.title}}</h4>
-		         <h4 ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-model="item.organization">
-		         {{item.organization}}
-         </h4>
-
-            </div>
-
-            <div class="row" id="comment">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="timeScope">{{item.timeScope}}</div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="place">{{item.place}}</div>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-			</div>
-		</div>
+	</div>
 </div>
