@@ -1,0 +1,11 @@
+#appBody{
+    border: 1px solid black;
+    background-color: grey;
+}
+
+.item{
+    background-color: white;
+    border-radius: 2%;
+    height:400px;
+    
+}

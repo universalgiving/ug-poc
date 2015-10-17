@@ -1,0 +1,1524 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN' 'http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<title>UG</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+<style type='text/css'>
+body {
+    font-family: 'trebuchet MS', 'Lucida sans', Dialog;
+    font-size: 12px;
+    color: #444;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 4px;
+    text-align: left;
+}
+
+.bordered th {
+    background-color: #d7d7ea;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4fb), to(#d7d7ea));
+    background-image: -webkit-linear-gradient(top, #f4f4fb, #d7d7ea);
+    background-image:    -moz-linear-gradient(top, #f4f4fb, #d7d7ea);
+    background-image:     -ms-linear-gradient(top, #f4f4fb, #d7d7ea);
+    background-image:      -o-linear-gradient(top, #f4f4fb, #d7d7ea);
+    background-image:         linear-gradient(top, #f4f4fb, #d7d7ea);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+</style>
+</head>
+
+<body>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='1170' height='1025' viewbox='0 0 1170 1025' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ document.getElementById(el[i]).setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ document.getElementById(el[i]).setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Lucida Grande, 'Trebuchet MS', Dialog; font-size:12px; }
+  text:hover          { fill:#a00000; font-size:13px; }
+  text.highlight      { fill:#a00000; font-size:13px; }
+  text.colType        { fill:#b3b3b3; }
+  path                { stroke:#54402e; stroke-width:1.25; fill:none; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:7; stroke:#e5d78a; opacity:0.6;}
+  rect.table          { fill:#ffffff; stroke:#101010; stroke-width:0.44; filter:url(#shadow); }
+  line.delim          { stroke:#222; stroke-width:0.3; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; filter: url(#shadow);}
+  rect.grp            { stroke:#b1b1b1; stroke-width:1.7; }
+</style>
+<defs>
+  <pattern patternUnits='userSpaceOnUse' id='layoutBgA' width='10' height='20' x='0' y='0' viewBox='0 0 5 10'>  
+     <line x1='-2' y1='1' x2='7' y2='10' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='6' x2='7' y2='15' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='-4' x2='7' y2='5' stroke='#f3f3f3' stroke-width='.5'/>  
+  </pattern>  
+  <radialGradient id='layoutBgB' gradientUnits='userSpaceOnUse' cx='50%' cy='50%' r='75%' fx='46%' fy='22%'>
+     <stop offset='0%' stop-opacity='.2' stop-color='#f0f0f0' />  
+     <stop offset='100%' stop-color='#e7e7e7' />  
+  </radialGradient>
+  <linearGradient id='tableHeaderGradient0' x1='0%' y1='0%' x2='0%' y2='90%' >
+          <stop offset='-50%' stop-color='#b7c8e3'/> 
+          <stop offset='20%' stop-color='#fafafa'/> 
+          <stop offset='100%' stop-color='#b7c8e3'/> 
+   </linearGradient>
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id='shadow' width='120%' height='120%'> 
+      <feOffset result='offOut' in='SourceGraphic' dx='2' dy='2' /> 
+      <feColorMatrix result='matrixOut' in='offOut' type='matrix' 
+      values='0.1 0 0 0 0 0 0.1 0 0 0 0 0 0.1 0 0 0 0 0 0.5 0' /> 
+      <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' /> 
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' /> 
+    </filter> 
+  <filter id='fkShadow' height='130%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#eaf6ee' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#cce3ca' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 7,11 L 15,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+      <path d='M 0,0 L 7,11 L 15,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,15 L 7,3 L 15,15 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+      <path d='M 0,15 L 7,3 L 15,15' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fbea8e;stroke:#472106;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#e07554;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.5' y='7.7' style='font-size:8px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#e07554;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <marker id='arrow01' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 15.000,3.750 L 7.500,2.500 L 7.500,7.500 L 15.000,3.750 z' style='fill:#5e554d;' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 15.000,3.750 L 7.500,2.500 L 7.500,7.500 L 15.000,3.750 z' style='fill:#5e554d;' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <circle cx='11.25' cy='3.75' r='2.50' style='fill:white;stroke:#5e554d;' />
+    <path d='M 3.75,0.00 L 3.75, 7.50 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <circle cx='11.25' cy='3.75' r='2.50' style='fill:white;stroke:#5e554d;' />
+    <path d='M 0.00,0.00 L 7.50,3.75 L 0.00,7.50' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <path d='M 7.50,0.00 L 7.50, 7.50 z' />
+    <path d='M 3.75,0.00 L 3.75, 7.50 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 15.00 7.50' refX='7.50' refY='3.75' markerUnits='strokeWidth' markerWidth='15.00' markerHeight='7.50' orient='auto'>
+    <path d='M 0.00,3.75 L 15.00,3.75 z' />
+    <path d='M 7.50,0.00 L 7.50, 7.50 z' />
+    <path d='M 0.00,0.00 L 7.50,3.75 L 0.00,7.50' />
+  </marker>
+</defs>
+
+<!-- ============= Desktop ============= -->
+<rect x='1' y='1' width='1168' height='1023' rx='7' ry='7' style='fill:url(#layoutBgA); stroke:#333333; stroke-width:0.5;' />
+<rect x='1' y='1' width='1168' height='1023' rx='7' ry='7' style='fill:url(#layoutBgB)'/>
+
+<!-- ============= Legend ============= -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='260' height='64' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='20' y='30'><tspan>Project</tspan> UG by <a xlink:href='http://www.dbschema.com' text-decoration='underline'>DbSchema</a></text> 
+  <text x='20' y='44'><tspan>Layout</tspan> UG</text> 
+  <text x='20' y='58' style='fill:#777'><tspan>Column comments as mouse-over tooltips.</tspan></text> 
+</g>
+
+<g transform='translate(0,110)'>
+<!-- ============= Fk 'volunteer_fk_volunteer_area' ============= -->
+<path id='volunteer_fk_volunteer_area'  onmouseover="hghl(['volunteer_fk_volunteer_area','UG.volunteer.focus_areas','UG.area._id'])" onmouseout="uhghl(['volunteer_fk_volunteer_area','UG.volunteer.focus_areas','UG.area._id'])" transform='translate(7,0)' class='scene' d='M 870 360 L 607,360 Q 600,360 600,352 L 600,157 Q 600,150 592,150 L 585,150' >
+	<title>Fk fk_volunteer_area
+volunteer ref area ( focus_areas -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 870 360 L 607,360 Q 600,360 600,352 L 600,157 Q 600,150 592,150 L 585,150' ></path>
+<text x='807' y='355' transform='rotate(0 807,355)' title='Fk fk_volunteer_area
+volunteer ref area ( focus_areas -&gt; _id )' style='fill:#cfc391;'>focus_areas</text>
+<!-- ============= Fk 'gift_fk_gift_organization' ============= -->
+<path id='gift_fk_gift_organization'  onmouseover="hghl(['gift_fk_gift_organization','UG.gift.organization_id','UG.organization._id'])" onmouseout="uhghl(['gift_fk_gift_organization','UG.gift.organization_id','UG.organization._id'])" transform='translate(7,0)' class='scene' d='M 60 600 L 60,375' >
+	<title>Fk fk_gift_organization
+gift ref organization ( organization_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 60 600 L 60,375' ></path>
+<text x='62' y='595' transform='rotate(270 62,595)' title='Fk fk_gift_organization
+gift ref organization ( organization_id -&gt; _id )' style='fill:#cfc391;'>organization_id</text>
+<!-- ============= Fk 'gift_fk_gift_photo' ============= -->
+<path id='gift_fk_gift_photo'  onmouseover="hghl(['gift_fk_gift_photo','UG.gift.photos','UG.photo._id'])" onmouseout="uhghl(['gift_fk_gift_photo','UG.gift.photos','UG.photo._id'])" transform='translate(7,0)' class='scene' d='M 180 645 L 487,645 Q 495,645 495,637 L 495,510' >
+	<title>Fk fk_gift_photo
+gift ref photo ( photos -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 180 645 L 487,645 Q 495,645 495,637 L 495,510' ></path>
+<text x='187' y='640' transform='rotate(0 187,640)' title='Fk fk_gift_photo
+gift ref photo ( photos -&gt; _id )' style='fill:#cfc391;'>photos</text>
+<!-- ============= Fk 'gift_fk_gift_area' ============= -->
+<path id='gift_fk_gift_area'  onmouseover="hghl(['gift_fk_gift_area','UG.gift.focus_areas','UG.area._id'])" onmouseout="uhghl(['gift_fk_gift_area','UG.gift.focus_areas','UG.area._id'])" transform='translate(7,0)' class='scene' d='M 180 660 L 442,660 Q 450,660 450,652 L 450,142 Q 450,135 457,135 L 465,135' >
+	<title>Fk fk_gift_area
+gift ref area ( focus_areas -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 180 660 L 442,660 Q 450,660 450,652 L 450,142 Q 450,135 457,135 L 465,135' ></path>
+<text x='187' y='655' transform='rotate(0 187,655)' title='Fk fk_gift_area
+gift ref area ( focus_areas -&gt; _id )' style='fill:#cfc391;'>focus_areas</text>
+<!-- ============= Fk 'organization_fk_organization_area' ============= -->
+<path id='organization_fk_organization_area'  onmouseover="hghl(['organization_fk_organization_area','UG.organization.focus_areas','UG.area._id'])" onmouseout="uhghl(['organization_fk_organization_area','UG.organization.focus_areas','UG.area._id'])" transform='translate(7,0)' class='scene' d='M 255 75 L 465,75' >
+	<title>Fk fk_organization_area
+organization ref area ( focus_areas -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 255 75 L 465,75' ></path>
+<text x='262' y='70' transform='rotate(0 262,70)' title='Fk fk_organization_area
+organization ref area ( focus_areas -&gt; _id )' style='fill:#cfc391;'>focus_areas</text>
+<!-- ============= Fk 'organization_fk_organization_country' ============= -->
+<path id='organization_fk_organization_country'  onmouseover="hghl(['organization_fk_organization_country','UG.organization.served_countries','UG.country._id'])" onmouseout="uhghl(['organization_fk_organization_country','UG.organization.served_countries','UG.country._id'])" transform='translate(7,0)' class='scene' d='M 255 240 L 465,240' >
+	<title>Fk fk_organization_country
+organization ref country ( served_countries -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 255 240 L 465,240' ></path>
+<text x='262' y='235' transform='rotate(0 262,235)' title='Fk fk_organization_country
+organization ref country ( served_countries -&gt; _id )' style='fill:#cfc391;'>served_countries</text>
+<!-- ============= Fk 'organization_fk_organization_photo' ============= -->
+<path id='organization_fk_organization_photo'  onmouseover="hghl(['organization_fk_organization_photo','UG.organization.photos','UG.photo._id'])" onmouseout="uhghl(['organization_fk_organization_photo','UG.organization.photos','UG.photo._id'])" transform='translate(7,0)' class='scene' d='M 255 360 L 487,360 Q 495,360 495,367 L 495,405' >
+	<title>Fk fk_organization_photo
+organization ref photo ( photos -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 255 360 L 487,360 Q 495,360 495,367 L 495,405' ></path>
+<text x='262' y='355' transform='rotate(0 262,355)' title='Fk fk_organization_photo
+organization ref photo ( photos -&gt; _id )' style='fill:#cfc391;'>photos</text>
+<!-- ============= Fk 'organization_fk_organization_project' ============= -->
+<path id='organization_fk_organization_project'  onmouseover="hghl(['organization_fk_organization_project','UG.organization.projects','UG.project._id'])" onmouseout="uhghl(['organization_fk_organization_project','UG.organization.projects','UG.project._id'])" transform='translate(7,0)' class='scene' d='M 255 180 L 825,180' >
+	<title>Fk fk_organization_project
+organization ref project ( projects -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 255 180 L 825,180' ></path>
+<text x='262' y='175' transform='rotate(0 262,175)' title='Fk fk_organization_project
+organization ref project ( projects -&gt; _id )' style='fill:#cfc391;'>projects</text>
+<!-- ============= Fk 'organization_fk_organization_gift' ============= -->
+<path id='organization_fk_organization_gift'  onmouseover="hghl(['organization_fk_organization_gift','UG.organization.gifts','UG.gift._id'])" onmouseout="uhghl(['organization_fk_organization_gift','UG.organization.gifts','UG.gift._id'])" transform='translate(7,0)' class='scene' d='M 75 375 L 75,600' >
+	<title>Fk fk_organization_gift
+organization ref gift ( gifts -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 75 375 L 75,600' ></path>
+<text x='88' y='375' transform='rotate(90 88,375)' title='Fk fk_organization_gift
+organization ref gift ( gifts -&gt; _id )' style='fill:#cfc391;'>gifts</text>
+<!-- ============= Fk 'organization_fk_organization_volunteer' ============= -->
+<path id='organization_fk_organization_volunteer'  onmouseover="hghl(['organization_fk_organization_volunteer','UG.organization.volunteers','UG.volunteer._id'])" onmouseout="uhghl(['organization_fk_organization_volunteer','UG.organization.volunteers','UG.volunteer._id'])" transform='translate(7,0)' class='scene' d='M 255 345 L 847,345 Q 855,345 855,352 L 855,382 Q 855,390 862,390 L 870,390' >
+	<title>Fk fk_organization_volunteer
+organization ref volunteer ( volunteers -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 255 345 L 847,345 Q 855,345 855,352 L 855,382 Q 855,390 862,390 L 870,390' ></path>
+<text x='262' y='340' transform='rotate(0 262,340)' title='Fk fk_organization_volunteer
+organization ref volunteer ( volunteers -&gt; _id )' style='fill:#cfc391;'>volunteers</text>
+<!-- ============= Fk 'area_fk_area_organization' ============= -->
+<path id='area_fk_area_organization'  onmouseover="hghl(['area_fk_area_organization','UG.area.organizations','UG.organization._id'])" onmouseout="uhghl(['area_fk_area_organization','UG.area.organizations','UG.organization._id'])" transform='translate(7,0)' class='scene' d='M 465 60 L 255,60' >
+	<title>Fk fk_area_organization
+area ref organization ( organizations -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 465 60 L 255,60' ></path>
+<text x='393' y='55' transform='rotate(0 393,55)' title='Fk fk_area_organization
+area ref organization ( organizations -&gt; _id )' style='fill:#cfc391;'>organizations</text>
+<!-- ============= Fk 'area_fk_area_volunteer' ============= -->
+<path id='area_fk_area_volunteer'  onmouseover="hghl(['area_fk_area_volunteer','UG.area.volunteers','UG.volunteer._id'])" onmouseout="uhghl(['area_fk_area_volunteer','UG.area.volunteers','UG.volunteer._id'])" transform='translate(7,0)' class='scene' d='M 585 135 L 787,135 Q 795,135 795,142 L 795,367 Q 795,375 802,375 L 870,375' >
+	<title>Fk fk_area_volunteer
+area ref volunteer ( volunteers -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 585 135 L 787,135 Q 795,135 795,142 L 795,367 Q 795,375 802,375 L 870,375' ></path>
+<text x='592' y='130' transform='rotate(0 592,130)' title='Fk fk_area_volunteer
+area ref volunteer ( volunteers -&gt; _id )' style='fill:#cfc391;'>volunteers</text>
+<!-- ============= Fk 'area_fk_area_project' ============= -->
+<path id='area_fk_area_project'  onmouseover="hghl(['area_fk_area_project','UG.area.projects','UG.project._id'])" onmouseout="uhghl(['area_fk_area_project','UG.area.projects','UG.project._id'])" transform='translate(7,0)' class='scene' d='M 585 60 L 825,60' >
+	<title>Fk fk_area_project
+area ref project ( projects -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 585 60 L 825,60' ></path>
+<text x='592' y='55' transform='rotate(0 592,55)' title='Fk fk_area_project
+area ref project ( projects -&gt; _id )' style='fill:#cfc391;'>projects</text>
+<!-- ============= Fk 'country_fk_country_organization' ============= -->
+<path id='country_fk_country_organization'  onmouseover="hghl(['country_fk_country_organization','UG.country.organizations','UG.organization._id'])" onmouseout="uhghl(['country_fk_country_organization','UG.country.organizations','UG.organization._id'])" transform='translate(7,0)' class='scene' d='M 465 225 L 255,225' >
+	<title>Fk fk_country_organization
+country ref organization ( organizations -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 465 225 L 255,225' ></path>
+<text x='393' y='220' transform='rotate(0 393,220)' title='Fk fk_country_organization
+country ref organization ( organizations -&gt; _id )' style='fill:#cfc391;'>organizations</text>
+<!-- ============= Fk 'country_fk_country_project' ============= -->
+<path id='country_fk_country_project'  onmouseover="hghl(['country_fk_country_project','UG.country.projects','UG.project._id'])" onmouseout="uhghl(['country_fk_country_project','UG.country.projects','UG.project._id'])" transform='translate(7,0)' class='scene' d='M 585 255 L 847,255 Q 855,255 855,247 L 855,240' >
+	<title>Fk fk_country_project
+country ref project ( projects -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 585 255 L 847,255 Q 855,255 855,247 L 855,240' ></path>
+<text x='592' y='250' transform='rotate(0 592,250)' title='Fk fk_country_project
+country ref project ( projects -&gt; _id )' style='fill:#cfc391;'>projects</text>
+<!-- ============= Fk 'project_fk_project_organization' ============= -->
+<path id='project_fk_project_organization'  onmouseover="hghl(['project_fk_project_organization','UG.project.organization_id','UG.organization._id'])" onmouseout="uhghl(['project_fk_project_organization','UG.project.organization_id','UG.organization._id'])" transform='translate(7,0)' class='scene' d='M 825 195 L 255,195' >
+	<title>Fk fk_project_organization
+project ref organization ( organization_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 825 195 L 255,195' ></path>
+<text x='743' y='190' transform='rotate(0 743,190)' title='Fk fk_project_organization
+project ref organization ( organization_id -&gt; _id )' style='fill:#cfc391;'>organization_id</text>
+<!-- ============= Fk 'project_fk_project_area' ============= -->
+<path id='project_fk_project_area'  onmouseover="hghl(['project_fk_project_area','UG.project.focus_areas','UG.area._id'])" onmouseout="uhghl(['project_fk_project_area','UG.project.focus_areas','UG.area._id'])" transform='translate(7,0)' class='scene' d='M 825 75 L 585,75' >
+	<title>Fk fk_project_area
+project ref area ( focus_areas -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 825 75 L 585,75' ></path>
+<text x='762' y='70' transform='rotate(0 762,70)' title='Fk fk_project_area
+project ref area ( focus_areas -&gt; _id )' style='fill:#cfc391;'>focus_areas</text>
+<!-- ============= Fk 'project_fk_project_country' ============= -->
+<path id='project_fk_project_country'  onmouseover="hghl(['project_fk_project_country','UG.project.served_countries','UG.country._id'])" onmouseout="uhghl(['project_fk_project_country','UG.project.served_countries','UG.country._id'])" transform='translate(7,0)' class='scene' d='M 825 165 L 622,165 Q 615,165 615,172 L 615,232 Q 615,240 607,240 L 585,240' >
+	<title>Fk fk_project_country
+project ref country ( served_countries -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 825 165 L 622,165 Q 615,165 615,172 L 615,232 Q 615,240 607,240 L 585,240' ></path>
+<text x='734' y='160' transform='rotate(0 734,160)' title='Fk fk_project_country
+project ref country ( served_countries -&gt; _id )' style='fill:#cfc391;'>served_countries</text>
+<!-- ============= Fk 'transaction_fk_transaction_user' ============= -->
+<path id='transaction_fk_transaction_user'  onmouseover="hghl(['transaction_fk_transaction_user','UG.transaction.user_id','UG.user._id'])" onmouseout="uhghl(['transaction_fk_transaction_user','UG.transaction.user_id','UG.user._id'])" transform='translate(7,0)' class='scene' d='M 705 690 L 660,690' >
+	<title>Fk fk_transaction_user
+transaction ref user ( user_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 705 690 L 660,690' ></path>
+<text x='667' y='685' transform='rotate(0 667,685)' title='Fk fk_transaction_user
+transaction ref user ( user_id -&gt; _id )' style='fill:#cfc391;'>user_id</text>
+<!-- ============= Fk 'transaction_fk_transaction_gift' ============= -->
+<path id='transaction_fk_transaction_gift'  onmouseover="hghl(['transaction_fk_transaction_gift','UG.transaction.gift_id','UG.gift._id'])" onmouseout="uhghl(['transaction_fk_transaction_gift','UG.transaction.gift_id','UG.gift._id'])" transform='translate(7,0)' class='scene' d='M 705 630 L 180,630' >
+	<title>Fk fk_transaction_gift
+transaction ref gift ( gift_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 705 630 L 180,630' ></path>
+<text x='673' y='625' transform='rotate(0 673,625)' title='Fk fk_transaction_gift
+transaction ref gift ( gift_id -&gt; _id )' style='fill:#cfc391;'>gift_id</text>
+<!-- ============= Fk 'transaction_fk_transaction_project' ============= -->
+<path id='transaction_fk_transaction_project'  onmouseover="hghl(['transaction_fk_transaction_project','UG.transaction.project_id','UG.project._id'])" onmouseout="uhghl(['transaction_fk_transaction_project','UG.transaction.project_id','UG.project._id'])" transform='translate(7,0)' class='scene' d='M 810 585 L 810,217 Q 810,210 817,210 L 825,210' >
+	<title>Fk fk_transaction_project
+transaction ref project ( project_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 810 585 L 810,217 Q 810,210 817,210 L 825,210' ></path>
+<text x='812' y='580' transform='rotate(270 812,580)' title='Fk fk_transaction_project
+transaction ref project ( project_id -&gt; _id )' style='fill:#cfc391;'>project_id</text>
+<!-- ============= Fk 'list_fk_list_user' ============= -->
+<path id='list_fk_list_user'  onmouseover="hghl(['list_fk_list_user','UG.list.user_id','UG.user._id'])" onmouseout="uhghl(['list_fk_list_user','UG.list.user_id','UG.user._id'])" transform='translate(7,0)' class='scene' d='M 1020 825 L 652,825 Q 645,825 645,817 L 645,810' >
+	<title>Fk fk_list_user
+list ref user ( user_id -&gt; _id )</title>
+</path>
+<path class='defo' transform='translate(7,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'    d='M 1020 825 L 652,825 Q 645,825 645,817 L 645,810' ></path>
+<text x='982' y='820' transform='rotate(0 982,820)' title='Fk fk_list_user
+list ref user ( user_id -&gt; _id )' style='fill:#cfc391;'>user_id</text>
+<!-- ============= Table 'photo' ============= -->
+<rect class='table' x='480' y='413' width='90' height='90' rx='7' ry='7' />
+<line class='delim' x1='480.500000' y1='439.500000' x2='569.500000' y2='439.500000'/>
+<line class='delim' x1='495.500000' y1='439.500000' x2='495.500000' y2='502.500000'/>
+<line class='delim' x1='558.500000' y1='439.500000' x2='558.500000' y2='502.500000'/>
+<path d='M 480.50 439.50 L 480.50 420.50 Q 480.50 413.50 487.50 413.50 L 562.50 413.50 Q 569.50 413.50 569.50 420.50 L 569.50 439.50 L480.50 439.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#photo'><text x='506' y='431'>photo</text><title>Table UG.photo</title></a>
+  <use id='nn' x='482' y='447' xlink:href='#nn'/><a xlink:href='#photo._id'><use id='pk' x='482' y='446' xlink:href='#pk'/><title>Pk Pk_photo ( _id ) </title></a>
+<a xlink:href='#photo._id'><text id='UG.photo._id' x='498' y='457' onmouseover="hghl(['gift_fk_gift_photo','organization_fk_organization_photo'])" onmouseout="uhghl(['gift_fk_gift_photo','organization_fk_organization_photo'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#photo._id'><use id='ref' x='558' y='446' xlink:href='#ref'/><title>Referred by gift ( photos -&gt; _id ) 
+Referred by organization ( photos -&gt; _id ) </title></a>
+  <a xlink:href='#photo.url'><text id='UG.photo.url' x='498' y='472'>url</text><title>url
+string</title></a>
+  <a xlink:href='#photo.description'><text id='UG.photo.description' x='498' y='487'>description</text><title>description
+list</title></a>
+
+<!-- ============= Table 'volunteer' ============= -->
+<rect class='table' x='885' y='353' width='195' height='240' rx='7' ry='7' />
+<line class='delim' x1='885.500000' y1='379.500000' x2='1079.500000' y2='379.500000'/>
+<line class='delim' x1='900.500000' y1='379.500000' x2='900.500000' y2='592.500000'/>
+<line class='delim' x1='1068.500000' y1='379.500000' x2='1068.500000' y2='592.500000'/>
+<path d='M 885.50 379.50 L 885.50 360.50 Q 885.50 353.50 892.50 353.50 L 1072.50 353.50 Q 1079.50 353.50 1079.50 360.50 L 1079.50 379.50 L885.50 379.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#volunteer'><text x='954' y='371'>volunteer</text><title>Table UG.volunteer</title></a>
+  <use id='nn' x='887' y='387' xlink:href='#nn'/><a xlink:href='#volunteer._id'><use id='pk' x='887' y='386' xlink:href='#pk'/><title>Pk Pk_volunteer ( _id ) </title></a>
+<a xlink:href='#volunteer._id'><text id='UG.volunteer._id' x='903' y='397' onmouseover="hghl(['area_fk_area_volunteer','organization_fk_organization_volunteer'])" onmouseout="uhghl(['area_fk_area_volunteer','organization_fk_organization_volunteer'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#volunteer._id'><use id='ref' x='1068' y='386' xlink:href='#ref'/><title>Referred by area ( volunteers -&gt; _id ) 
+Referred by organization ( volunteers -&gt; _id ) </title></a>
+  <use id='nn' x='887' y='402' xlink:href='#nn'/><a xlink:href='#volunteer.title'><text id='UG.volunteer.title' x='903' y='412'>title</text><title>title
+* string</title></a>
+  <use id='nn' x='887' y='417' xlink:href='#nn'/><a xlink:href='#volunteer.cover_picture_url'><text id='UG.volunteer.cover_picture_url' x='903' y='427'>cover_picture_url</text><title>cover_picture_url
+* string</title></a>
+  <use id='nn' x='887' y='432' xlink:href='#nn'/><a xlink:href='#volunteer.quick_facts'><text id='UG.volunteer.quick_facts' x='903' y='442'>quick_facts</text><title>quick_facts
+* string</title></a>
+  <use id='nn' x='887' y='447' xlink:href='#nn'/><a xlink:href='#volunteer.dates'><text id='UG.volunteer.dates' x='903' y='457'>dates</text><title>dates
+* integer</title></a>
+  <use id='nn' x='887' y='462' xlink:href='#nn'/><a xlink:href='#volunteer.costs'><text id='UG.volunteer.costs' x='903' y='472'>costs</text><title>costs
+* string</title></a>
+  <a xlink:href='#volunteer.full_description'><text id='UG.volunteer.full_description' x='903' y='487'>full_description</text><title>full_description
+string</title></a>
+  <a xlink:href='#volunteer.cost_details'><text id='UG.volunteer.cost_details' x='903' y='502'>cost_details</text><title>cost_details
+string</title></a>
+  <a xlink:href='#volunteer.a_great_opportunities_for'><text id='UG.volunteer.a_great_opportunities_for' x='903' y='517'>a_great_opportunities_for</text><title>a_great_opportunities_for
+string</title></a>
+  <a xlink:href='#volunteer.language_needed'><text id='UG.volunteer.language_needed' x='903' y='532'>language_needed</text><title>language_needed
+string</title></a>
+  <a xlink:href='#volunteer.needed_skills_experience'><text id='UG.volunteer.needed_skills_experience' x='903' y='547'>needed_skills_experience</text><title>needed_skills_experience
+string</title></a>
+  <a xlink:href='#volunteer.detailed_location_information'><text id='UG.volunteer.detailed_location_information' x='903' y='562'>detailed_location_information</text><title>detailed_location_information
+string</title></a>
+  <a xlink:href='#volunteer.focus_areas'><text id='UG.volunteer.focus_areas' x='903' y='577' onmouseover="hghl(['volunteer_fk_volunteer_area'])" onmouseout="uhghl(['volunteer_fk_volunteer_area'])">focus_areas</text><title>focus_areas
+list</title></a>
+<a xlink:href='#volunteer.focus_areas'><use id='fk' x='1068' y='566' xlink:href='#fk'/><title>References area ( focus_areas -&gt; _id ) </title></a>
+
+<!-- ============= Table 'gift' ============= -->
+<rect class='table' x='45' y='608' width='135' height='195' rx='7' ry='7' />
+<line class='delim' x1='45.500000' y1='634.500000' x2='179.500000' y2='634.500000'/>
+<line class='delim' x1='60.500000' y1='634.500000' x2='60.500000' y2='802.500000'/>
+<line class='delim' x1='168.500000' y1='634.500000' x2='168.500000' y2='802.500000'/>
+<path d='M 45.50 634.50 L 45.50 615.50 Q 45.50 608.50 52.50 608.50 L 172.50 608.50 Q 179.50 608.50 179.50 615.50 L 179.50 634.50 L45.50 634.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#gift'><text x='100' y='626'>gift</text><title>Table UG.gift</title></a>
+  <use id='nn' x='47' y='642' xlink:href='#nn'/><a xlink:href='#gift._id'><use id='pk' x='47' y='641' xlink:href='#pk'/><title>Pk Pk_gift ( _id ) </title></a>
+<a xlink:href='#gift._id'><text id='UG.gift._id' x='63' y='652' onmouseover="hghl(['organization_fk_organization_gift','transaction_fk_transaction_gift'])" onmouseout="uhghl(['organization_fk_organization_gift','transaction_fk_transaction_gift'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#gift._id'><use id='ref' x='168' y='641' xlink:href='#ref'/><title>Referred by organization ( gifts -&gt; _id ) 
+Referred by transaction ( gift_id -&gt; _id ) </title></a>
+  <use id='nn' x='47' y='657' xlink:href='#nn'/><a xlink:href='#gift.title'><text id='UG.gift.title' x='63' y='667'>title</text><title>title
+* string</title></a>
+  <a xlink:href='#gift.description'><text id='UG.gift.description' x='63' y='682'>description</text><title>description
+string</title></a>
+  <use id='nn' x='47' y='687' xlink:href='#nn'/><a xlink:href='#gift.cover_picture_url'><text id='UG.gift.cover_picture_url' x='63' y='697'>cover_picture_url</text><title>cover_picture_url
+* string</title></a>
+  <use id='nn' x='47' y='702' xlink:href='#nn'/><a xlink:href='#gift.cost'><text id='UG.gift.cost' x='63' y='712'>cost</text><title>cost
+* integer</title></a>
+  <use id='nn' x='47' y='717' xlink:href='#nn'/><a xlink:href='#gift.create_time'><text id='UG.gift.create_time' x='63' y='727'>create_time</text><title>create_time
+* date</title></a>
+  <a xlink:href='#gift.popularity'><text id='UG.gift.popularity' x='63' y='742'>popularity</text><title>popularity
+integer</title></a>
+  <use id='nn' x='47' y='747' xlink:href='#nn'/><a xlink:href='#gift.organization_id'><text id='UG.gift.organization_id' x='63' y='757' onmouseover="hghl(['gift_fk_gift_organization'])" onmouseout="uhghl(['gift_fk_gift_organization'])">organization_id</text><title>organization_id
+* integer</title></a>
+<a xlink:href='#gift.organization_id'><use id='fk' x='168' y='746' xlink:href='#fk'/><title>References organization ( organization_id -&gt; _id ) </title></a>
+  <a xlink:href='#gift.photos'><text id='UG.gift.photos' x='63' y='772' onmouseover="hghl(['gift_fk_gift_photo'])" onmouseout="uhghl(['gift_fk_gift_photo'])">photos</text><title>photos
+list</title></a>
+<a xlink:href='#gift.photos'><use id='fk' x='168' y='761' xlink:href='#fk'/><title>References photo ( photos -&gt; _id ) </title></a>
+  <a xlink:href='#gift.focus_areas'><text id='UG.gift.focus_areas' x='63' y='787' onmouseover="hghl(['gift_fk_gift_area'])" onmouseout="uhghl(['gift_fk_gift_area'])">focus_areas</text><title>focus_areas
+list</title></a>
+<a xlink:href='#gift.focus_areas'><use id='fk' x='168' y='776' xlink:href='#fk'/><title>References area ( focus_areas -&gt; _id ) </title></a>
+
+<!-- ============= Table 'organization' ============= -->
+<rect class='table' x='45' y='38' width='210' height='330' rx='7' ry='7' />
+<line class='delim' x1='45.500000' y1='64.500000' x2='254.500000' y2='64.500000'/>
+<line class='delim' x1='60.500000' y1='64.500000' x2='60.500000' y2='367.500000'/>
+<line class='delim' x1='243.500000' y1='64.500000' x2='243.500000' y2='367.500000'/>
+<path d='M 45.50 64.50 L 45.50 45.50 Q 45.50 38.50 52.50 38.50 L 247.50 38.50 Q 254.50 38.50 254.50 45.50 L 254.50 64.50 L45.50 64.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#organization'><text x='113' y='56'>organization</text><title>Table UG.organization</title></a>
+  <use id='nn' x='47' y='72' xlink:href='#nn'/><a xlink:href='#organization._id'><use id='pk' x='47' y='71' xlink:href='#pk'/><title>Pk Pk_organization ( _id ) </title></a>
+<a xlink:href='#organization._id'><text id='UG.organization._id' x='63' y='82' onmouseover="hghl(['area_fk_area_organization','country_fk_country_organization','gift_fk_gift_organization','project_fk_project_organization'])" onmouseout="uhghl(['area_fk_area_organization','country_fk_country_organization','gift_fk_gift_organization','project_fk_project_organization'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#organization._id'><use id='ref' x='243' y='71' xlink:href='#ref'/><title>Referred by area ( organizations -&gt; _id ) 
+Referred by country ( organizations -&gt; _id ) 
+Referred by gift ( organization_id -&gt; _id ) 
+Referred by project ( organization_id -&gt; _id ) </title></a>
+  <use id='nn' x='47' y='87' xlink:href='#nn'/><a xlink:href='#organization.title'><text id='UG.organization.title' x='63' y='97'>title</text><title>title
+* string</title></a>
+  <a xlink:href='#organization.mission_statement'><text id='UG.organization.mission_statement' x='63' y='112'>mission_statement</text><title>mission_statement
+string</title></a>
+  <a xlink:href='#organization.backgroud'><text id='UG.organization.backgroud' x='63' y='127'>backgroud</text><title>backgroud
+string</title></a>
+  <a xlink:href='#organization.date_founded'><text id='UG.organization.date_founded' x='63' y='142'>date_founded</text><title>date_founded
+date</title></a>
+  <a xlink:href='#organization.number_of_staff'><text id='UG.organization.number_of_staff' x='63' y='157'>number_of_staff</text><title>number_of_staff
+integer</title></a>
+  <a xlink:href='#organization.description_of_services'><text id='UG.organization.description_of_services' x='63' y='172'>description_of_services</text><title>description_of_services
+string</title></a>
+  <a xlink:href='#organization.history'><text id='UG.organization.history' x='63' y='187'>history</text><title>history
+string</title></a>
+  <a xlink:href='#organization.accomplishments_and_progress'><text id='UG.organization.accomplishments_and_progress' x='63' y='202'>accomplishments_and_progress</text><title>accomplishments_and_progress
+string</title></a>
+  <a xlink:href='#organization.local_partners'><text id='UG.organization.local_partners' x='63' y='217'>local_partners</text><title>local_partners
+string</title></a>
+  <a xlink:href='#organization.additional_affiliations'><text id='UG.organization.additional_affiliations' x='63' y='232'>additional_affiliations</text><title>additional_affiliations
+string</title></a>
+  <a xlink:href='#organization.quality_check'><text id='UG.organization.quality_check' x='63' y='247'>quality_check</text><title>quality_check
+string</title></a>
+  <a xlink:href='#organization.office_and_board'><text id='UG.organization.office_and_board' x='63' y='262'>office_and_board</text><title>office_and_board
+string</title></a>
+  <use id='nn' x='47' y='267' xlink:href='#nn'/><a xlink:href='#organization.focus_areas'><text id='UG.organization.focus_areas' x='63' y='277' onmouseover="hghl(['organization_fk_organization_area'])" onmouseout="uhghl(['organization_fk_organization_area'])">focus_areas</text><title>focus_areas
+* list</title></a>
+<a xlink:href='#organization.focus_areas'><use id='fk' x='243' y='266' xlink:href='#fk'/><title>References area ( focus_areas -&gt; _id ) </title></a>
+  <use id='nn' x='47' y='282' xlink:href='#nn'/><a xlink:href='#organization.served_countries'><text id='UG.organization.served_countries' x='63' y='292' onmouseover="hghl(['organization_fk_organization_country'])" onmouseout="uhghl(['organization_fk_organization_country'])">served_countries</text><title>served_countries
+* list</title></a>
+<a xlink:href='#organization.served_countries'><use id='fk' x='243' y='281' xlink:href='#fk'/><title>References country ( served_countries -&gt; _id ) </title></a>
+  <a xlink:href='#organization.photos'><text id='UG.organization.photos' x='63' y='307' onmouseover="hghl(['organization_fk_organization_photo'])" onmouseout="uhghl(['organization_fk_organization_photo'])">photos</text><title>photos
+list</title></a>
+<a xlink:href='#organization.photos'><use id='fk' x='243' y='296' xlink:href='#fk'/><title>References photo ( photos -&gt; _id ) </title></a>
+  <a xlink:href='#organization.projects'><text id='UG.organization.projects' x='63' y='322' onmouseover="hghl(['organization_fk_organization_project'])" onmouseout="uhghl(['organization_fk_organization_project'])">projects</text><title>projects
+list</title></a>
+<a xlink:href='#organization.projects'><use id='fk' x='243' y='311' xlink:href='#fk'/><title>References project ( projects -&gt; _id ) </title></a>
+  <a xlink:href='#organization.gifts'><text id='UG.organization.gifts' x='63' y='337' onmouseover="hghl(['organization_fk_organization_gift'])" onmouseout="uhghl(['organization_fk_organization_gift'])">gifts</text><title>gifts
+list</title></a>
+<a xlink:href='#organization.gifts'><use id='fk' x='243' y='326' xlink:href='#fk'/><title>References gift ( gifts -&gt; _id ) </title></a>
+  <a xlink:href='#organization.volunteers'><text id='UG.organization.volunteers' x='63' y='352' onmouseover="hghl(['organization_fk_organization_volunteer'])" onmouseout="uhghl(['organization_fk_organization_volunteer'])">volunteers</text><title>volunteers
+list</title></a>
+<a xlink:href='#organization.volunteers'><use id='fk' x='243' y='341' xlink:href='#fk'/><title>References volunteer ( volunteers -&gt; _id ) </title></a>
+
+<!-- ============= Table 'area' ============= -->
+<rect class='table' x='480' y='38' width='105' height='120' rx='7' ry='7' />
+<line class='delim' x1='480.500000' y1='64.500000' x2='584.500000' y2='64.500000'/>
+<line class='delim' x1='495.500000' y1='64.500000' x2='495.500000' y2='157.500000'/>
+<line class='delim' x1='573.500000' y1='64.500000' x2='573.500000' y2='157.500000'/>
+<path d='M 480.50 64.50 L 480.50 45.50 Q 480.50 38.50 487.50 38.50 L 577.50 38.50 Q 584.50 38.50 584.50 45.50 L 584.50 64.50 L480.50 64.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#area'><text x='518' y='56'>area</text><title>Table UG.area</title></a>
+  <use id='nn' x='482' y='72' xlink:href='#nn'/><a xlink:href='#area._id'><use id='pk' x='482' y='71' xlink:href='#pk'/><title>Pk Pk_area ( _id ) </title></a>
+<a xlink:href='#area._id'><text id='UG.area._id' x='498' y='82' onmouseover="hghl(['gift_fk_gift_area','organization_fk_organization_area','project_fk_project_area','volunteer_fk_volunteer_area'])" onmouseout="uhghl(['gift_fk_gift_area','organization_fk_organization_area','project_fk_project_area','volunteer_fk_volunteer_area'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#area._id'><use id='ref' x='573' y='71' xlink:href='#ref'/><title>Referred by gift ( focus_areas -&gt; _id ) 
+Referred by organization ( focus_areas -&gt; _id ) 
+Referred by project ( focus_areas -&gt; _id ) 
+Referred by volunteer ( focus_areas -&gt; _id ) </title></a>
+  <a xlink:href='#area.title'><text id='UG.area.title' x='498' y='97'>title</text><title>title
+string</title></a>
+  <use id='nn' x='482' y='102' xlink:href='#nn'/><a xlink:href='#area.organizations'><text id='UG.area.organizations' x='498' y='112' onmouseover="hghl(['area_fk_area_organization'])" onmouseout="uhghl(['area_fk_area_organization'])">organizations</text><title>organizations
+* list</title></a>
+<a xlink:href='#area.organizations'><use id='fk' x='573' y='101' xlink:href='#fk'/><title>References organization ( organizations -&gt; _id ) </title></a>
+  <a xlink:href='#area.volunteers'><text id='UG.area.volunteers' x='498' y='127' onmouseover="hghl(['area_fk_area_volunteer'])" onmouseout="uhghl(['area_fk_area_volunteer'])">volunteers</text><title>volunteers
+list</title></a>
+<a xlink:href='#area.volunteers'><use id='fk' x='573' y='116' xlink:href='#fk'/><title>References volunteer ( volunteers -&gt; _id ) </title></a>
+  <a xlink:href='#area.projects'><text id='UG.area.projects' x='498' y='142' onmouseover="hghl(['area_fk_area_project'])" onmouseout="uhghl(['area_fk_area_project'])">projects</text><title>projects
+list</title></a>
+<a xlink:href='#area.projects'><use id='fk' x='573' y='131' xlink:href='#fk'/><title>References project ( projects -&gt; _id ) </title></a>
+
+<!-- ============= Table 'country' ============= -->
+<rect class='table' x='480' y='218' width='105' height='105' rx='7' ry='7' />
+<line class='delim' x1='480.500000' y1='244.500000' x2='584.500000' y2='244.500000'/>
+<line class='delim' x1='495.500000' y1='244.500000' x2='495.500000' y2='322.500000'/>
+<line class='delim' x1='573.500000' y1='244.500000' x2='573.500000' y2='322.500000'/>
+<path d='M 480.50 244.50 L 480.50 225.50 Q 480.50 218.50 487.50 218.50 L 577.50 218.50 Q 584.50 218.50 584.50 225.50 L 584.50 244.50 L480.50 244.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#country'><text x='508' y='236'>country</text><title>Table UG.country</title></a>
+  <use id='nn' x='482' y='252' xlink:href='#nn'/><a xlink:href='#country._id'><use id='pk' x='482' y='251' xlink:href='#pk'/><title>Pk Pk_country ( _id ) </title></a>
+<a xlink:href='#country._id'><text id='UG.country._id' x='498' y='262' onmouseover="hghl(['organization_fk_organization_country','project_fk_project_country'])" onmouseout="uhghl(['organization_fk_organization_country','project_fk_project_country'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#country._id'><use id='ref' x='573' y='251' xlink:href='#ref'/><title>Referred by organization ( served_countries -&gt; _id ) 
+Referred by project ( served_countries -&gt; _id ) </title></a>
+  <use id='nn' x='482' y='267' xlink:href='#nn'/><a xlink:href='#country.title'><text id='UG.country.title' x='498' y='277'>title</text><title>title
+* string</title></a>
+  <a xlink:href='#country.organizations'><text id='UG.country.organizations' x='498' y='292' onmouseover="hghl(['country_fk_country_organization'])" onmouseout="uhghl(['country_fk_country_organization'])">organizations</text><title>organizations
+list</title></a>
+<a xlink:href='#country.organizations'><use id='fk' x='573' y='281' xlink:href='#fk'/><title>References organization ( organizations -&gt; _id ) </title></a>
+  <a xlink:href='#country.projects'><text id='UG.country.projects' x='498' y='307' onmouseover="hghl(['country_fk_country_project'])" onmouseout="uhghl(['country_fk_country_project'])">projects</text><title>projects
+list</title></a>
+<a xlink:href='#country.projects'><use id='fk' x='573' y='296' xlink:href='#fk'/><title>References project ( projects -&gt; _id ) </title></a>
+
+<!-- ============= Table 'user' ============= -->
+<rect class='table' x='540' y='668' width='120' height='135' rx='7' ry='7' />
+<line class='delim' x1='540.500000' y1='694.500000' x2='659.500000' y2='694.500000'/>
+<line class='delim' x1='555.500000' y1='694.500000' x2='555.500000' y2='802.500000'/>
+<line class='delim' x1='648.500000' y1='694.500000' x2='648.500000' y2='802.500000'/>
+<path d='M 540.50 694.50 L 540.50 675.50 Q 540.50 668.50 547.50 668.50 L 652.50 668.50 Q 659.50 668.50 659.50 675.50 L 659.50 694.50 L540.50 694.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#user'><text x='585' y='686'>user</text><title>Table UG.user</title></a>
+  <use id='nn' x='542' y='702' xlink:href='#nn'/><a xlink:href='#user._id'><use id='pk' x='542' y='701' xlink:href='#pk'/><title>Pk Pk_user ( _id ) </title></a>
+<a xlink:href='#user._id'><text id='UG.user._id' x='558' y='712' onmouseover="hghl(['list_fk_list_user','transaction_fk_transaction_user'])" onmouseout="uhghl(['list_fk_list_user','transaction_fk_transaction_user'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#user._id'><use id='ref' x='648' y='701' xlink:href='#ref'/><title>Referred by list ( user_id -&gt; _id ) 
+Referred by transaction ( user_id -&gt; _id ) </title></a>
+  <use id='nn' x='542' y='717' xlink:href='#nn'/><a xlink:href='#user.email'><text id='UG.user.email' x='558' y='727'>email</text><title>email
+* integer</title></a>
+  <a xlink:href='#user.first_name'><text id='UG.user.first_name' x='558' y='742'>first_name</text><title>first_name
+string</title></a>
+  <a xlink:href='#user.last_name'><text id='UG.user.last_name' x='558' y='757'>last_name</text><title>last_name
+string</title></a>
+  <a xlink:href='#user.phone_number'><text id='UG.user.phone_number' x='558' y='772'>phone_number</text><title>phone_number
+string</title></a>
+  <a xlink:href='#user.password'><text id='UG.user.password' x='558' y='787'>password</text><title>password
+string</title></a>
+
+<!-- ============= Table 'project' ============= -->
+<rect class='table' x='840' y='38' width='150' height='195' rx='7' ry='7' />
+<line class='delim' x1='840.500000' y1='64.500000' x2='989.500000' y2='64.500000'/>
+<line class='delim' x1='855.500000' y1='64.500000' x2='855.500000' y2='232.500000'/>
+<line class='delim' x1='978.500000' y1='64.500000' x2='978.500000' y2='232.500000'/>
+<path d='M 840.50 64.50 L 840.50 45.50 Q 840.50 38.50 847.50 38.50 L 982.50 38.50 Q 989.50 38.50 989.50 45.50 L 989.50 64.50 L840.50 64.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#project'><text x='893' y='56'>project</text><title>Table UG.project</title></a>
+  <use id='nn' x='842' y='72' xlink:href='#nn'/><a xlink:href='#project._id'><use id='pk' x='842' y='71' xlink:href='#pk'/><title>Pk Pk_project ( _id ) </title></a>
+<a xlink:href='#project._id'><text id='UG.project._id' x='858' y='82' onmouseover="hghl(['area_fk_area_project','country_fk_country_project','organization_fk_organization_project','transaction_fk_transaction_project'])" onmouseout="uhghl(['area_fk_area_project','country_fk_country_project','organization_fk_organization_project','transaction_fk_transaction_project'])">_id</text><title>_id
+* oid</title></a>
+<a xlink:href='#project._id'><use id='ref' x='978' y='71' xlink:href='#ref'/><title>Referred by area ( projects -&gt; _id ) 
+Referred by country ( projects -&gt; _id ) 
+Referred by organization ( projects -&gt; _id ) 
+Referred by transaction ( project_id -&gt; _id ) </title></a>
+  <use id='nn' x='842' y='87' xlink:href='#nn'/><a xlink:href='#project.title'><text id='UG.project.title' x='858' y='97'>title</text><title>title
+* string</title></a>
+  <use id='nn' x='842' y='102' xlink:href='#nn'/><a xlink:href='#project.cost'><text id='UG.project.cost' x='858' y='112'>cost</text><title>cost
+* integer</title></a>
+  <use id='nn' x='842' y='117' xlink:href='#nn'/><a xlink:href='#project.goal'><text id='UG.project.goal' x='858' y='127'>goal</text><title>goal
+* integer</title></a>
+  <a xlink:href='#project.raised'><text id='UG.project.raised' x='858' y='142'>raised</text><title>raised
+integer</title></a>
+  <use id='nn' x='842' y='147' xlink:href='#nn'/><a xlink:href='#project.the_big_picture'><text id='UG.project.the_big_picture' x='858' y='157'>the_big_picture</text><title>the_big_picture
+* string</title></a>
+  <use id='nn' x='842' y='162' xlink:href='#nn'/><a xlink:href='#project.impact_your_donation'><text id='UG.project.impact_your_donation' x='858' y='172'>impact_your_donation</text><title>impact_your_donation
+* string</title></a>
+  <a xlink:href='#project.organization_id'><text id='UG.project.organization_id' x='858' y='187' onmouseover="hghl(['project_fk_project_organization'])" onmouseout="uhghl(['project_fk_project_organization'])">organization_id</text><title>organization_id
+oid</title></a>
+<a xlink:href='#project.organization_id'><use id='fk' x='978' y='176' xlink:href='#fk'/><title>References organization ( organization_id -&gt; _id ) </title></a>
+  <a xlink:href='#project.focus_areas'><text id='UG.project.focus_areas' x='858' y='202' onmouseover="hghl(['project_fk_project_area'])" onmouseout="uhghl(['project_fk_project_area'])">focus_areas</text><title>focus_areas
+list</title></a>
+<a xlink:href='#project.focus_areas'><use id='fk' x='978' y='191' xlink:href='#fk'/><title>References area ( focus_areas -&gt; _id ) </title></a>
+  <a xlink:href='#project.served_countries'><text id='UG.project.served_countries' x='858' y='217' onmouseover="hghl(['project_fk_project_country'])" onmouseout="uhghl(['project_fk_project_country'])">served_countries</text><title>served_countries
+list</title></a>
+<a xlink:href='#project.served_countries'><use id='fk' x='978' y='206' xlink:href='#fk'/><title>References country ( served_countries -&gt; _id ) </title></a>
+
+<!-- ============= Table 'transaction' ============= -->
+<rect class='table' x='720' y='593' width='135' height='210' rx='7' ry='7' />
+<line class='delim' x1='720.500000' y1='619.500000' x2='854.500000' y2='619.500000'/>
+<line class='delim' x1='735.500000' y1='619.500000' x2='735.500000' y2='802.500000'/>
+<line class='delim' x1='843.500000' y1='619.500000' x2='843.500000' y2='802.500000'/>
+<path d='M 720.50 619.50 L 720.50 600.50 Q 720.50 593.50 727.50 593.50 L 847.50 593.50 Q 854.50 593.50 854.50 600.50 L 854.50 619.50 L720.50 619.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#transaction'><text x='754' y='611'>transaction</text><title>Table UG.transaction</title></a>
+  <use id='nn' x='722' y='627' xlink:href='#nn'/><a xlink:href='#transaction._id'><use id='pk' x='722' y='626' xlink:href='#pk'/><title>Pk Pk_transaction ( _id ) </title></a>
+<a xlink:href='#transaction._id'><text id='UG.transaction._id' x='738' y='637'>_id</text><title>_id
+* oid</title></a>
+  <a xlink:href='#transaction.user_id'><text id='UG.transaction.user_id' x='738' y='652' onmouseover="hghl(['transaction_fk_transaction_user'])" onmouseout="uhghl(['transaction_fk_transaction_user'])">user_id</text><title>user_id
+integer</title></a>
+<a xlink:href='#transaction.user_id'><use id='fk' x='843' y='641' xlink:href='#fk'/><title>References user ( user_id -&gt; _id ) </title></a>
+  <use id='nn' x='722' y='657' xlink:href='#nn'/><a xlink:href='#transaction.amount'><text id='UG.transaction.amount' x='738' y='667'>amount</text><title>amount
+* integer</title></a>
+  <use id='nn' x='722' y='672' xlink:href='#nn'/><a xlink:href='#transaction.type'><text id='UG.transaction.type' x='738' y='682'>type</text><title>type
+* integer
+gift, project</title></a>
+  <a xlink:href='#transaction.gift_id'><text id='UG.transaction.gift_id' x='738' y='697' onmouseover="hghl(['transaction_fk_transaction_gift'])" onmouseout="uhghl(['transaction_fk_transaction_gift'])">gift_id</text><title>gift_id
+oid</title></a>
+<a xlink:href='#transaction.gift_id'><use id='fk' x='843' y='686' xlink:href='#fk'/><title>References gift ( gift_id -&gt; _id ) </title></a>
+  <a xlink:href='#transaction.project_id'><text id='UG.transaction.project_id' x='738' y='712' onmouseover="hghl(['transaction_fk_transaction_project'])" onmouseout="uhghl(['transaction_fk_transaction_project'])">project_id</text><title>project_id
+oid</title></a>
+<a xlink:href='#transaction.project_id'><use id='fk' x='843' y='701' xlink:href='#fk'/><title>References project ( project_id -&gt; _id ) </title></a>
+  <a xlink:href='#transaction.when'><text id='UG.transaction.when' x='738' y='727'>when</text><title>when
+date</title></a>
+  <a xlink:href='#transaction.frequency'><text id='UG.transaction.frequency' x='738' y='742'>frequency</text><title>frequency
+integer
+once, weekly, monthly, ect...</title></a>
+  <a xlink:href='#transaction.behalf'><text id='UG.transaction.behalf' x='738' y='757'>behalf</text><title>behalf
+integer
+Make this donation on behalf of someone special as a gift, in honor of, or in memory of someone.</title></a>
+  <a xlink:href='#transaction.status'><text id='UG.transaction.status' x='738' y='772'>status</text><title>status
+integer
+pending, declined, completed, cancelled</title></a>
+  <a xlink:href='#transaction.payment_method'><text id='UG.transaction.payment_method' x='738' y='787'>payment_method</text><title>payment_method
+integer
+check, online</title></a>
+
+<!-- ============= Table 'list' ============= -->
+<rect class='table' x='1035' y='743' width='90' height='120' rx='7' ry='7' />
+<line class='delim' x1='1035.500000' y1='769.500000' x2='1124.500000' y2='769.500000'/>
+<line class='delim' x1='1050.500000' y1='769.500000' x2='1050.500000' y2='862.500000'/>
+<line class='delim' x1='1113.500000' y1='769.500000' x2='1113.500000' y2='862.500000'/>
+<path d='M 1035.50 769.50 L 1035.50 750.50 Q 1035.50 743.50 1042.50 743.50 L 1117.50 743.50 Q 1124.50 743.50 1124.50 750.50 L 1124.50 769.50 L1035.50 769.50 ' style='fill:url(#tableHeaderGradient0); stroke:none;' />
+<a xlink:href='#list'><text x='1069' y='761'>list</text><title>Table UG.list</title></a>
+  <use id='nn' x='1037' y='777' xlink:href='#nn'/><a xlink:href='#list._id'><use id='pk' x='1037' y='776' xlink:href='#pk'/><title>Pk Pk_list ( _id ) </title></a>
+<a xlink:href='#list._id'><text id='UG.list._id' x='1053' y='787'>_id</text><title>_id
+* oid</title></a>
+  <a xlink:href='#list.user_id'><text id='UG.list.user_id' x='1053' y='802' onmouseover="hghl(['list_fk_list_user'])" onmouseout="uhghl(['list_fk_list_user'])">user_id</text><title>user_id
+oid</title></a>
+<a xlink:href='#list.user_id'><use id='fk' x='1113' y='791' xlink:href='#fk'/><title>References user ( user_id -&gt; _id ) </title></a>
+  <a xlink:href='#list.name'><text id='UG.list.name' x='1053' y='817'>name</text><title>name
+string</title></a>
+  <use id='nn' x='1037' y='822' xlink:href='#nn'/><a xlink:href='#list.status'><text id='UG.list.status' x='1053' y='832'>status</text><title>status
+* integer
+private, public</title></a>
+  <a xlink:href='#list.event_date'><text id='UG.list.event_date' x='1053' y='847'>event_date</text><title>event_date
+date</title></a>
+
+</g></svg>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='photo'>Table photo</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='photo._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='photo.url'>url</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='photo.description'>description</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;photo</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='volunteer'>Table volunteer</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer.cover_picture_url'>cover&#95;picture&#95;url</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer.quick_facts'>quick&#95;facts</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer.dates'>dates</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='volunteer.costs'>costs</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.full_description'>full&#95;description</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.cost_details'>cost&#95;details</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.a_great_opportunities_for'>a&#95;great&#95;opportunities&#95;for</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.language_needed'>language&#95;needed</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.needed_skills_experience'>needed&#95;skills&#95;experience</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.detailed_location_information'>detailed&#95;location&#95;information</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='volunteer.focus_areas'>focus&#95;areas</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;volunteer</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_volunteer_area</td>
+		<td > ( focus&#95;areas ) ref <a href='#area'>area</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='gift'>Table gift</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='gift._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='gift.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='gift.description'>description</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='gift.cover_picture_url'>cover&#95;picture&#95;url</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='gift.cost'>cost</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='gift.create_time'>create&#95;time</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='gift.popularity'>popularity</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='gift.organization_id'>organization&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='gift.photos'>photos</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='gift.focus_areas'>focus&#95;areas</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;gift</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_gift_organization</td>
+		<td > ( organization&#95;id ) ref <a href='#organization'>organization</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_gift_photo</td>
+		<td > ( photos ) ref <a href='#photo'>photo</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_gift_area</td>
+		<td > ( focus&#95;areas ) ref <a href='#area'>area</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='organization'>Table organization</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='organization._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='organization.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.mission_statement'>mission&#95;statement</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.backgroud'>backgroud</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.date_founded'>date&#95;founded</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.number_of_staff'>number&#95;of&#95;staff</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.description_of_services'>description&#95;of&#95;services</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.history'>history</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.accomplishments_and_progress'>accomplishments&#95;and&#95;progress</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.local_partners'>local&#95;partners</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.additional_affiliations'>additional&#95;affiliations</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.quality_check'>quality&#95;check</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.office_and_board'>office&#95;and&#95;board</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='organization.focus_areas'>focus&#95;areas</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='organization.served_countries'>served&#95;countries</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.photos'>photos</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.projects'>projects</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.gifts'>gifts</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='organization.volunteers'>volunteers</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;organization</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_area</td>
+		<td > ( focus&#95;areas ) ref <a href='#area'>area</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_country</td>
+		<td > ( served&#95;countries ) ref <a href='#country'>country</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_photo</td>
+		<td > ( photos ) ref <a href='#photo'>photo</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_project</td>
+		<td > ( projects ) ref <a href='#project'>project</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_gift</td>
+		<td > ( gifts ) ref <a href='#gift'>gift</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_organization_volunteer</td>
+		<td > ( volunteers ) ref <a href='#volunteer'>volunteer</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='area'>Table area</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='area._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='area.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='area.organizations'>organizations</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='area.volunteers'>volunteers</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='area.projects'>projects</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;area</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_area_organization</td>
+		<td > ( organizations ) ref <a href='#organization'>organization</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_area_volunteer</td>
+		<td > ( volunteers ) ref <a href='#volunteer'>volunteer</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_area_project</td>
+		<td > ( projects ) ref <a href='#project'>project</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='country'>Table country</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='country._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='country.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='country.organizations'>organizations</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='country.projects'>projects</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;country</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_country_organization</td>
+		<td > ( organizations ) ref <a href='#organization'>organization</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_country_project</td>
+		<td > ( projects ) ref <a href='#project'>project</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='user'>Table user</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='user._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='user.email'>email</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='user.first_name'>first&#95;name</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='user.last_name'>last&#95;name</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='user.phone_number'>phone&#95;number</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='user.password'>password</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;user</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='project'>Table project</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='project._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='project.title'>title</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='project.cost'>cost</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='project.goal'>goal</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='project.raised'>raised</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='project.the_big_picture'>the&#95;big&#95;picture</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='project.impact_your_donation'>impact&#95;your&#95;donation</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='project.organization_id'>organization&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='project.focus_areas'>focus&#95;areas</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='project.served_countries'>served&#95;countries</a></td>
+		<td> list   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;project</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_project_organization</td>
+		<td > ( organization&#95;id ) ref <a href='#organization'>organization</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_project_area</td>
+		<td > ( focus&#95;areas ) ref <a href='#area'>area</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_project_country</td>
+		<td > ( served&#95;countries ) ref <a href='#country'>country</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='transaction'>Table transaction</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='transaction._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.user_id'>user&#95;id</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='transaction.amount'>amount</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='transaction.type'>type</a></td>
+		<td> integer   </td>
+		<td> gift&#44; project </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.gift_id'>gift&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.project_id'>project&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.when'>when</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.frequency'>frequency</a></td>
+		<td> integer   </td>
+		<td> once&#44; weekly&#44; monthly&#44; ect&#46;&#46;&#46; </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.behalf'>behalf</a></td>
+		<td> integer   </td>
+		<td> Make this donation on behalf of someone special as a gift&#44; in honor of&#44; or in memory of someone&#46; </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.status'>status</a></td>
+		<td> integer   </td>
+		<td> pending&#44; declined&#44; completed&#44; cancelled </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='transaction.payment_method'>payment&#95;method</a></td>
+		<td> integer   </td>
+		<td> check&#44; online </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;transaction</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_transaction_user</td>
+		<td > ( user&#95;id ) ref <a href='#user'>user</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_transaction_gift</td>
+		<td > ( gift&#95;id ) ref <a href='#gift'>gift</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_transaction_project</td>
+		<td > ( project&#95;id ) ref <a href='#project'>project</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'><a name='list'>Table list</a></th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='list._id'>&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='list.user_id'>user&#95;id</a></td>
+		<td> oid   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='list.name'>name</a></td>
+		<td> string   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='list.status'>status</a></td>
+		<td> integer   </td>
+		<td> private&#44; public </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='list.event_date'>event&#95;date</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Indexes</b></th></tr>
+	<tr>		<td>Pk</td><td>Pk&#95;list</td>
+		<td> ON &#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'><b>Foreign Keys</b></th></tr>
+	<tr>
+		<td>&nbsp;</td><td>fk_list_user</td>
+		<td > ( user&#95;id ) ref <a href='#user'>user</a> (&#95;id) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+</body></html>
