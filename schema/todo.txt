@@ -1,0 +1,10 @@
+1. schema relational columns rename to xxx_id [done]
+2. list rename to watch_list [done]
+
+rename area => cause [done]
+remove unnecessary fields in cause table [done]
+project => country 1:1 [cancle] ( it's n:n relationship)
+country remove uncessary fields [done]
+volunteer => volunteering [done]  
+gift + project: add viewCount field [done]
+add role table(AVC, Admin, Donor, Volunteer) [done]
