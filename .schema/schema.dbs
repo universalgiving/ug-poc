@@ -209,12 +209,12 @@
 		<entity schema="UG" name="organization" color="b7c8e3" x="57" y="57" />
 		<entity schema="UG" name="watch_list" color="b7c8e3" x="342" y="741" />
 		<entity schema="UG" name="user" color="b7c8e3" x="551" y="684" />
-		<entity schema="UG" name="transaction" color="b7c8e3" x="741" y="608" />
 		<entity schema="UG" name="photo" color="b7c8e3" x="494" y="437" />
 		<entity schema="UG" name="country" color="b7c8e3" x="494" y="247" />
 		<entity schema="UG" name="gift" color="b7c8e3" x="57" y="627" />
 		<entity schema="UG" name="project" color="b7c8e3" x="855" y="57" />
 		<entity schema="UG" name="volunteering" color="b7c8e3" x="988" y="342" />
 		<entity schema="UG" name="role" color="b7c8e3" x="570" y="893" />
+		<entity schema="UG" name="transaction" color="b7c8e3" x="741" y="608" />
 	</layout>
 </project>
