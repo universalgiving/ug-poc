@@ -1,51 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="UG" id="Project_20e075ac" html="y" template="Default" database="MongoDb" >
 	<schema name="UG" schemaname="UG" >
-		<table name="area" >
-			<column name="_id" type="oid" jt="-8" mandatory="y" />
+		<table name="cause" >
+			<comment><![CDATA[health, education, etc]]></comment>
+			<column name="_id" type="oid" jt="-8" />
 			<column name="title" type="string" jt="12" />
-			<column name="organizations" type="list" jt="12" mandatory="y" />
-			<column name="volunteers" type="list" jt="12" />
-			<column name="projects" type="list" jt="12" />
-			<index name="Pk_area" unique="PRIMARY_KEY" >
-				<column name="_id" />
-			</index>
-			<fk name="fk_area_organization" virtual="y" to_schema="UG" to_table="organization" >
-				<fk_column name="organizations" pk="_id" />
-			</fk>
-			<fk name="fk_area_volunteer" virtual="y" to_schema="UG" to_table="volunteer" >
-				<fk_column name="volunteers" pk="_id" />
-			</fk>
-			<fk name="fk_area_project" virtual="y" to_schema="UG" to_table="project" >
-				<fk_column name="projects" pk="_id" />
-			</fk>
 		</table>
 		<table name="country" >
 			<column name="_id" type="oid" jt="-8" mandatory="y" />
 			<column name="title" type="string" jt="12" mandatory="y" />
-			<column name="organizations" type="list" jt="12" />
-			<column name="projects" type="list" jt="12" />
 			<index name="Pk_country" unique="PRIMARY_KEY" >
 				<column name="_id" />
 			</index>
-			<fk name="fk_country_organization" virtual="y" to_schema="UG" to_table="organization" >
-				<fk_column name="organizations" pk="_id" />
-			</fk>
-			<fk name="fk_country_project" virtual="y" to_schema="UG" to_table="project" >
-				<fk_column name="projects" pk="_id" />
-			</fk>
 		</table>
 		<table name="gift" >
 			<column name="_id" type="oid" jt="-8" mandatory="y" />
 			<column name="title" type="string" jt="12" mandatory="y" />
-			<column name="description" type="string" jt="12" />
 			<column name="cover_picture_url" type="string" jt="12" mandatory="y" />
+			<column name="description" type="string" jt="12" />
 			<column name="cost" type="integer" jt="4" mandatory="y" />
 			<column name="create_time" type="date" jt="91" mandatory="y" />
 			<column name="popularity" type="integer" jt="4" />
 			<column name="organization_id" type="integer" jt="4" mandatory="y" />
 			<column name="photos" type="list" jt="12" />
-			<column name="focus_areas" type="list" jt="12" />
+			<column name="cause_ids" type="list" jt="12" />
+			<column name="served_country_ids" type="list" jt="12" />
+			<column name="view_count" type="integer" jt="4" />
 			<index name="Pk_gift" unique="PRIMARY_KEY" >
 				<column name="_id" />
 			</index>
@@ -55,28 +35,17 @@
 			<fk name="fk_gift_photo" virtual="y" to_schema="UG" to_table="photo" >
 				<fk_column name="photos" pk="_id" />
 			</fk>
-			<fk name="fk_gift_area" virtual="y" to_schema="UG" to_table="area" >
-				<fk_column name="focus_areas" pk="_id" />
+			<fk name="fk_gift_cause" virtual="y" to_schema="UG" to_table="cause" >
+				<fk_column name="cause_ids" pk="_id" />
 			</fk>
-		</table>
-		<table name="list" >
-			<column name="_id" type="oid" jt="-8" mandatory="y" />
-			<column name="user_id" type="oid" jt="-8" />
-			<column name="name" type="string" jt="12" />
-			<column name="status" type="integer" jt="4" mandatory="y" >
-				<comment><![CDATA[private, public]]></comment>
-			</column>
-			<column name="event_date" type="date" jt="91" />
-			<index name="Pk_list" unique="PRIMARY_KEY" >
-				<column name="_id" />
-			</index>
-			<fk name="fk_list_user" virtual="y" to_schema="UG" to_table="user" >
-				<fk_column name="user_id" pk="_id" />
+			<fk name="fk_gift_country" virtual="y" to_schema="UG" to_table="country" >
+				<fk_column name="served_country_ids" pk="_id" />
 			</fk>
 		</table>
 		<table name="organization" >
 			<column name="_id" type="oid" jt="-8" mandatory="y" />
 			<column name="title" type="string" jt="12" mandatory="y" />
+			<column name="cover_picture_url" type="string" jt="12" />
 			<column name="mission_statement" type="string" jt="12" />
 			<column name="backgroud" type="string" jt="12" />
 			<column name="date_founded" type="date" jt="91" />
@@ -88,32 +57,20 @@
 			<column name="additional_affiliations" type="string" jt="12" />
 			<column name="quality_check" type="string" jt="12" />
 			<column name="office_and_board" type="string" jt="12" />
-			<column name="focus_areas" type="list" jt="12" mandatory="y" />
-			<column name="served_countries" type="list" jt="12" mandatory="y" />
 			<column name="photos" type="list" jt="12" />
-			<column name="projects" type="list" jt="12" />
-			<column name="gifts" type="list" jt="12" />
-			<column name="volunteers" type="list" jt="12" />
+			<column name="cause_ids" type="list" jt="12" />
+			<column name="served_country_ids" type="list" jt="12" />
 			<index name="Pk_organization" unique="PRIMARY_KEY" >
 				<column name="_id" />
 			</index>
-			<fk name="fk_organization_area" virtual="y" to_schema="UG" to_table="area" >
-				<fk_column name="focus_areas" pk="_id" />
-			</fk>
 			<fk name="fk_organization_country" virtual="y" to_schema="UG" to_table="country" >
-				<fk_column name="served_countries" pk="_id" />
+				<fk_column name="served_country_ids" pk="_id" />
 			</fk>
 			<fk name="fk_organization_photo" virtual="y" to_schema="UG" to_table="photo" >
 				<fk_column name="photos" pk="_id" />
 			</fk>
-			<fk name="fk_organization_project" virtual="y" to_schema="UG" to_table="project" >
-				<fk_column name="projects" pk="_id" />
-			</fk>
-			<fk name="fk_organization_gift" virtual="y" to_schema="UG" to_table="gift" >
-				<fk_column name="gifts" pk="_id" />
-			</fk>
-			<fk name="fk_organization_volunteer" virtual="y" to_schema="UG" to_table="volunteer" >
-				<fk_column name="volunteers" pk="_id" />
+			<fk name="fk_organization_cause" virtual="y" to_schema="UG" to_table="cause" >
+				<fk_column name="cause_ids" pk="_id" />
 			</fk>
 		</table>
 		<table name="photo" >
@@ -127,25 +84,40 @@
 		<table name="project" >
 			<column name="_id" type="oid" jt="-8" mandatory="y" />
 			<column name="title" type="string" jt="12" mandatory="y" />
+			<column name="cover_picture_url" type="string" jt="12" />
 			<column name="cost" type="integer" jt="4" mandatory="y" />
 			<column name="goal" type="integer" jt="4" mandatory="y" />
 			<column name="raised" type="integer" jt="4" />
 			<column name="the_big_picture" type="string" jt="12" mandatory="y" />
 			<column name="impact_your_donation" type="string" jt="12" mandatory="y" />
 			<column name="organization_id" type="oid" jt="-8" />
-			<column name="focus_areas" type="list" jt="12" />
-			<column name="served_countries" type="list" jt="12" />
+			<column name="cause_ids" type="list" jt="12" />
+			<column name="served_country_ids" type="list" jt="12" />
+			<column name="view_count" type="integer" jt="4" />
 			<index name="Pk_project" unique="PRIMARY_KEY" >
 				<column name="_id" />
 			</index>
 			<fk name="fk_project_organization" virtual="y" to_schema="UG" to_table="organization" >
 				<fk_column name="organization_id" pk="_id" />
 			</fk>
-			<fk name="fk_project_area" virtual="y" to_schema="UG" to_table="area" >
-				<fk_column name="focus_areas" pk="_id" />
-			</fk>
 			<fk name="fk_project_country" virtual="y" to_schema="UG" to_table="country" >
-				<fk_column name="served_countries" pk="_id" />
+				<fk_column name="served_country_ids" pk="_id" />
+			</fk>
+			<fk name="fk_project_cause" virtual="y" to_schema="UG" to_table="cause" >
+				<fk_column name="cause_ids" pk="_id" />
+			</fk>
+		</table>
+		<table name="role" >
+			<column name="_id" type="oid" jt="-8" mandatory="y" />
+			<column name="user_id" type="oid" jt="-8" />
+			<column name="role" type="integer" jt="4" >
+				<comment><![CDATA[AVC, Admin, Donor, Volunteer]]></comment>
+			</column>
+			<index name="Pk_role" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_role_user" virtual="y" to_schema="UG" to_table="user" >
+				<fk_column name="user_id" pk="_id" />
 			</fk>
 		</table>
 		<table name="transaction" >
@@ -194,38 +166,55 @@
 				<column name="_id" />
 			</index>
 		</table>
-		<table name="volunteer" >
+		<table name="volunteering" >
 			<column name="_id" type="oid" jt="-8" mandatory="y" />
 			<column name="title" type="string" jt="12" mandatory="y" />
-			<column name="cover_picture_url" type="string" jt="12" mandatory="y" />
-			<column name="quick_facts" type="string" jt="12" mandatory="y" />
-			<column name="dates" type="integer" jt="4" mandatory="y" />
-			<column name="costs" type="string" jt="12" mandatory="y" />
+			<column name="cover_picture_url" type="string" jt="12" />
+			<column name="quick_facts" type="string" jt="12" />
+			<column name="dates" type="string" jt="12" />
+			<column name="costs" type="string" jt="12" />
 			<column name="full_description" type="string" jt="12" />
 			<column name="cost_details" type="string" jt="12" />
-			<column name="a_great_opportunities_for" type="string" jt="12" />
-			<column name="language_needed" type="string" jt="12" />
+			<column name="a_great_opportunity_for" type="string" jt="12" />
+			<column name="needed_language" type="string" jt="12" />
 			<column name="needed_skills_experience" type="string" jt="12" />
 			<column name="detailed_location_information" type="string" jt="12" />
-			<column name="focus_areas" type="list" jt="12" />
-			<index name="Pk_volunteer" unique="PRIMARY_KEY" >
+			<column name="cause_ids" type="list" jt="12" />
+			<column name="view_count" type="integer" jt="4" />
+			<index name="Pk_volunteering" unique="PRIMARY_KEY" >
 				<column name="_id" />
 			</index>
-			<fk name="fk_volunteer_area" virtual="y" to_schema="UG" to_table="area" >
-				<fk_column name="focus_areas" pk="_id" />
+			<fk name="fk_volunteering_cause" virtual="y" to_schema="UG" to_table="cause" >
+				<fk_column name="cause_ids" pk="_id" />
+			</fk>
+		</table>
+		<table name="watch_list" >
+			<column name="_id" type="oid" jt="-8" mandatory="y" />
+			<column name="user_id" type="oid" jt="-8" />
+			<column name="title" type="string" jt="12" />
+			<column name="event_date" type="date" jt="91" />
+			<column name="status" type="integer" jt="4" >
+				<comment><![CDATA[public, private]]></comment>
+			</column>
+			<index name="Pk_watch_list" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_watch_list_user" virtual="y" to_schema="UG" to_table="user" >
+				<fk_column name="user_id" pk="_id" />
 			</fk>
 		</table>
 	</schema>
 	<layout id="Layout_3262f24c" name="UG" show_relation_columns="y" >
-		<entity schema="UG" name="photo" color="b7c8e3" x="494" y="437" />
-		<entity schema="UG" name="volunteer" color="b7c8e3" x="893" y="380" />
-		<entity schema="UG" name="gift" color="b7c8e3" x="57" y="627" />
+		<entity schema="UG" name="cause" color="b7c8e3" x="494" y="57" />
 		<entity schema="UG" name="organization" color="b7c8e3" x="57" y="57" />
-		<entity schema="UG" name="area" color="b7c8e3" x="494" y="57" />
-		<entity schema="UG" name="country" color="b7c8e3" x="494" y="247" />
+		<entity schema="UG" name="watch_list" color="b7c8e3" x="342" y="741" />
 		<entity schema="UG" name="user" color="b7c8e3" x="551" y="684" />
-		<entity schema="UG" name="project" color="b7c8e3" x="855" y="57" />
 		<entity schema="UG" name="transaction" color="b7c8e3" x="741" y="608" />
-		<entity schema="UG" name="list" color="b7c8e3" x="1045" y="760" />
+		<entity schema="UG" name="photo" color="b7c8e3" x="494" y="437" />
+		<entity schema="UG" name="country" color="b7c8e3" x="494" y="247" />
+		<entity schema="UG" name="gift" color="b7c8e3" x="57" y="627" />
+		<entity schema="UG" name="project" color="b7c8e3" x="855" y="57" />
+		<entity schema="UG" name="volunteering" color="b7c8e3" x="988" y="342" />
+		<entity schema="UG" name="role" color="b7c8e3" x="570" y="893" />
 	</layout>
 </project>
