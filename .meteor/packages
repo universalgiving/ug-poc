@@ -5,6 +5,7 @@
 # but you can also edit it by hand.
 
 meteor-base             # Packages every Meteor app needs to have
+orionjs:core
 mongo                   # The database Meteor supports right now
 blaze-html-templates    # Compile .html files into Meteor Blaze views
 session                 # Client-side reactive dictionary for your app
@@ -18,8 +19,13 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 angular
+angularui:angular-ui-router
 
 devinit
 twbs:bootstrap
 fortawesome:fontawesome
 kadira:blaze-layout
+orionjs:bootstrap
+orionjs:summernote
+iron:router
+

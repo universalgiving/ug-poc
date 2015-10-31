@@ -1,1 +1,1 @@
-// Init = new Mongo.Collection("init");
+Init = new Mongo.Collection("init");
